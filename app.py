@@ -3,8 +3,6 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-st.set_page_config(page_title="World Cup 2018 Predictor", page_icon="⚽", layout="centered")
-
 @st.cache_resource
 def load_artifacts():
     model = joblib.load("model.joblib")
