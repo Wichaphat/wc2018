@@ -3,6 +3,8 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
+st.set_page_config(page_title="World Cup 2018 Predictor", page_icon="⚽", layout="centered")
+
 @st.cache_resource
 def load_artifacts():
     model = joblib.load("model.joblib")
@@ -43,8 +45,6 @@ def build_features(team_a, team_b):
     }
     return pd.DataFrame([feat])[FEATURE_COLS]
 
-
-st.set_page_config(page_title="World Cup 2018 Predictor", page_icon="⚽", layout="centered")
 
 st.title("ระบบทำนายผลฟุตบอลโลก 2018 รอบแบ่งกลุ่ม")
 st.caption("ระบบต้นแบบเพื่อการศึกษา — ทำนายจากสถิติก่อนการแข่งขัน (ไม่ใช่ระบบพยากรณ์ที่แม่นยำสำหรับใช้งานจริง)")
